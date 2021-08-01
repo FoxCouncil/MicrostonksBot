@@ -11,6 +11,7 @@ It makes the stonks show up on Telegram. Made by [Fox](https://foxcouncil.com).
 - #### Version - 1.0.0.0
   - Basic stuff
   - Only NYSE (New York Stock Exchange)
+  - Alerts if stonk changes by `$1`
   - Defaults to Microsoft Stock
 
 ## Roadmap
