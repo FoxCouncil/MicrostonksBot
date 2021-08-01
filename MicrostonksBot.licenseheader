@@ -1,0 +1,12 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+// Copyright (c) 2021 Fox Council - https://github.com/FoxCouncil/MicrostonksBot
+
+extensions: .aspx .ascx
+<%-- Copyright (c) 2021 Fox Council - https://github.com/FoxCouncil/MicrostonksBot --%>
+
+extensions: .vb
+'Copyright (c) 2021 Fox Council - https://github.com/FoxCouncil/MicrostonksBot
+
+extensions:  .xml .config .xsd
+<!-- Copyright (c) 2021 Fox Council - https://github.com/FoxCouncil/MicrostonksBot -->
