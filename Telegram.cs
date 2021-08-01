@@ -32,6 +32,34 @@ namespace MicrostonksBot
 
             var entity = await Tables.GetChat(chat);
 
+            if (msg.Text.StartsWith("/current"))
+            {
+                var stonk = Environment.GetEnvironmentVariable("TheStonk");
+
+                var singleCurrentQuote = await Tables.GetQuoteEntity();
+
+                if (singleCurrentQuote != null)
+                {
+                    await SendMessage(msg.Chat.Id, $"📊 `{stonk}` | Current Price: {singleCurrentQuote.PriceCurrent:C}\nLast Updated: {singleCurrentQuote.PriceTimestamp}");
+                }
+                else
+                {
+                    await SendMessage(msg.Chat.Id, $"📊 `{stonk}` | Current Price: N/A\nLast Updated: N/A");
+                }
+
+                return;
+            }
+            else if (msg.Text.StartsWith("/version"))
+            {
+                var version = Assembly.GetEntryAssembly().GetName().Version;
+
+                await SendMessage(msg.Chat.Id, $"MicrostonksBot Version {version} - By Fox - https://github.com/foxcouncil/microstonksbot");
+
+                return;
+            }
+
+            // Everything past here, should be commands for ADMINS/CREATORS only!!!
+
             if (chat.Type != ChatType.Private)
             {
                 try
@@ -77,27 +105,6 @@ namespace MicrostonksBot
                 {
                     await SendMessage(msg.Chat.Id, "You are already unsubscribed! Type /start to resume updates.");
                 }
-            }
-            else if (msg.Text.StartsWith("/current"))
-            {
-                var stonk = Environment.GetEnvironmentVariable("TheStonk");
-
-                var singleCurrentQuote = await Tables.GetQuoteEntity();
-
-                if (singleCurrentQuote != null)
-                {
-                    await SendMessage(msg.Chat.Id, $"📊 `{stonk}` | Current Price: {singleCurrentQuote.PriceCurrent:C}\nLast Updated: {singleCurrentQuote.PriceTimestamp}");
-                }
-                else
-                {
-                    await SendMessage(msg.Chat.Id, $"📊 `{stonk}` | Current Price: N/A\nLast Updated: N/A");
-                }
-            }
-            else if (msg.Text.StartsWith("/version"))
-            {
-                var version = Assembly.GetEntryAssembly().GetName().Version;
-
-                await SendMessage(msg.Chat.Id, $"MicrostonksBot Version {version} - By Fox - https://github.com/foxcouncil/microstonksbot");
             }
 
             return;
