@@ -97,7 +97,7 @@ namespace MicrostonksBot
             {
                 var version = Assembly.GetEntryAssembly().GetName().Version;
 
-                await SendMessage(msg.Chat.Id, $"MicrostonksBot Version {version} - By Fox - https://github.com/foxcouncil/microstonksbots");
+                await SendMessage(msg.Chat.Id, $"MicrostonksBot Version {version} - By Fox - https://github.com/foxcouncil/microstonksbot");
             }
 
             return;
