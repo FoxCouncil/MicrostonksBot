@@ -16,6 +16,7 @@ It makes the stonks show up on Telegram. Made by [Fox](https://foxcouncil.com).
 
 ## Roadmap
 - Graphs
+- Daily Summaries
 - Memes
 - Animated Stuff
 - More Stonks Support
