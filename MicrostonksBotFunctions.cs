@@ -39,6 +39,8 @@ namespace MicrostonksBot
 
             var difference = currentPrice - entity.PriceOpen;
 
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             if (Math.Abs(difference) >= 1)
             {
                 if (difference > 0)
