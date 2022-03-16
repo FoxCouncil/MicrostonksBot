@@ -68,7 +68,7 @@ namespace MicrostonksBot
 
                     if (user.Status != ChatMemberStatus.Administrator && user.Status != ChatMemberStatus.Creator)
                     {
-                        await SendMessage(msg.Chat.Id, "Nice try...");
+                        // await SendMessage(msg.Chat.Id, "Nice try...");
 
                         return;
                     }
